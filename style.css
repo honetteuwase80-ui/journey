@@ -4,46 +4,69 @@ body, html{
   height:100%;
   font-family:Inter,Arial,sans-serif;
 }
-.journey{
+.timeline{
   position:relative;
   width:100%;
   min-height:100vh;
   background:url('image.png') no-repeat center center/cover;
-  padding:60px 20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  padding:80px 20px;
 }
 .title{
+  text-align:center;
   font-size:2.5rem;
   color:#fff;
   text-shadow:2px 2px 10px rgba(0,0,0,0.7);
   margin-bottom:50px;
-  text-align:center;
 }
 .milestone{
+  position:relative;
+  width:50%;
+  margin-bottom:60px;
+}
+.milestone.left{
+  left:0;
+  text-align:right;
+}
+.milestone.right{
+  left:50%;
+  text-align:left;
+}
+.milestone::before{
+  content:'';
+  position:absolute;
+  top:20px;
+  width:20px;
+  height:20px;
+  background:#3b82f6;
+  border-radius:50%;
+  z-index:1;
+}
+.milestone.left::before{
+  right:-10px;
+}
+.milestone.right::before{
+  left:-10px;
+}
+.content{
   background:rgba(255,255,255,0.85);
-  width:90%;
-  max-width:700px;
   padding:20px 25px;
   border-radius:15px;
-  margin-bottom:40px;
+  display:inline-block;
   box-shadow:0 8px 20px rgba(0,0,0,0.3);
-  text-align:center;
 }
-.milestone h2{
-  color:#0f172a;
+.content h2{
   font-size:1.4rem;
+  color:#0f172a;
   margin-bottom:5px;
 }
-.milestone span{
+.content span{
   display:block;
   font-size:0.9rem;
   color:#64748b;
   margin-bottom:10px;
 }
-.milestone p{
+.content p{
   font-size:1rem;
-  line-height:1.5;
+  line-height:1.4;
   color:#0f172a;
 }
